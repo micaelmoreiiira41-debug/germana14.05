@@ -6,9 +6,13 @@
     "usar_verificado": true,
     "badge": {
       "posicao": "topo esquerdo ou topo central, conforme composicao",
-      "fundo": "rgba(10, 8, 4, 0.72)",
-      "borda": "rgba(176, 144, 109, 0.34)",
-      "avatar": "circulo em degradê champagne/dourado",
+      "tamanho_padrao": {
+        "largura_px": 431,
+        "altura_px": 112
+      },
+      "fundo": "preto glass premium com blur, brilho interno sutil e sombra externa",
+      "borda": "rgba(220, 174, 131, 0.38)",
+      "avatar": "circulo em degrade champagne/dourado #DCAE83",
       "texto_secundario": "curto e contextual, ex: carreira medica, pericia medica, estudos"
     }
   },
@@ -25,10 +29,10 @@
   "cores": {
     "fundo_principal": "#0A0804",
     "texto_principal": "#F0E8D8",
-    "destaque": "#B0906D",
+    "destaque": "#DCAE83",
     "dourado_claro_verificado": "#D8B879",
     "sombras": "#050403",
-    "regra": "Usar o destaque #B0906D em palavras-chave. Evitar branco puro, azul, ciano, verde, roxo, neon e saturacao agressiva."
+    "regra": "Usar o destaque #DCAE83 em palavras-chave. Evitar branco puro, azul, ciano, verde, roxo, neon e saturacao agressiva."
   },
   "tipografia": {
     "familias": {
@@ -43,26 +47,26 @@
       "margem_esquerda": "110px a 130px",
       "largura_maxima_texto": "760px a 820px",
       "entrelinha": "compacta, sem encostar",
-      "ajuste_tamanho": "diminuir quando necessario para encaixar, mas preservar presenca editorial"
+      "ajuste_tamanho": "texto principal entre 92 e 100px; usar 85px como minimo apenas em frases longas"
     },
     "preset_story_aprovado": {
       "margem_esquerda": 122,
       "largura_texto": 790,
       "titulo_cormorant_garamond": {
-        "font_size_px": 89,
+        "font_size_px": 96,
         "font_weight": 600,
         "line_height": 0.92
       },
       "linha_secundaria": {
-        "font_size_px": 81,
+        "font_size_px": 92,
         "line_height": 0.93
       },
       "palavra_destaque_playfair": {
         "font_family": "Playfair Display",
         "font_style": "italic",
         "font_weight": 500,
-        "font_size_px": 89,
-        "color": "#B0906D"
+        "font_size_px": 96,
+        "color": "#DCAE83"
       }
     },
     "variacoes_tipograficas": [
@@ -70,24 +74,24 @@
         "nome": "editorial_left_large",
         "uso": "stories e feeds com imagem forte em um lado e espaco negativo no outro",
         "alinhamento": "left",
-        "titulo": "Cormorant Garamond 84-92px",
-        "destaque": "Playfair Display Medium Italic 84-92px em #B0906D",
+        "titulo": "Cormorant Garamond 92-100px, minimo 85px quando o texto for longo",
+        "destaque": "Playfair Display Medium Italic 92-100px em #DCAE83",
         "entrelinha": "0.90 a 0.95"
       },
       {
         "nome": "stack_compact_center",
         "uso": "frases curtas e reflexivas, especialmente quando a imagem fica no topo",
         "alinhamento": "center",
-        "titulo": "Cormorant Garamond 78-88px",
-        "destaque": "Playfair Display Medium Italic em #B0906D",
+        "titulo": "Cormorant Garamond 92-98px, minimo 85px quando o texto for longo",
+        "destaque": "Playfair Display Medium Italic em #DCAE83",
         "entrelinha": "0.92 a 0.98"
       },
       {
         "nome": "quote_editorial_split",
         "uso": "frases longas que precisam de ritmo visual sem perder sofisticacao",
         "alinhamento": "left",
-        "titulo": "Cormorant Garamond 68-80px",
-        "destaque": "Playfair Display Medium Italic 76-86px",
+        "titulo": "Cormorant Garamond 85-94px para frases longas",
+        "destaque": "Playfair Display Medium Italic 85-94px em #DCAE83",
         "apoio": "DM Sans 20-28px quando houver complemento",
         "entrelinha": "0.96 a 1.04"
       }
@@ -102,10 +106,10 @@
     "regras": [
       "Nunca repetir a mesma imagem dentro da mesma campanha.",
       "Usar o arquivo categorias_fotos_black.md como inspiracao visual.",
-      "Médicas devem sempre aparecer com roupas claras ou brancas: jaleco branco, blazer claro, camisa clara ou composicao medica clara.",
-      "Evitar roupa preta ou escura em médicas.",
-      "Médicos homens podem usar roupa escura quando fizer sentido, mas a composicao geral deve manter contraste elegante.",
-      "Quando o texto mencionar médicas e médicos, incluir essa linguagem em pelo menos um slide da campanha.",
+      "Medicas devem sempre aparecer com roupas claras ou brancas: jaleco branco, blazer claro, camisa clara ou composicao medica clara.",
+      "Evitar roupa preta ou escura em medicas.",
+      "Medicos homens podem usar roupa escura quando fizer sentido, mas a composicao geral deve manter contraste elegante.",
+      "Quando o texto mencionar medicas e medicos, incluir essa linguagem em pelo menos um slide da campanha.",
       "Nao gerar texto, logos ou documentos legiveis dentro da imagem."
     ]
   },
@@ -133,7 +137,7 @@
     },
     "abstratos_textura_luz": {
       "codigo": "A01-A08",
-      "uso": "fundos premium de textura, luz, fumaça, marmore, chuva e sombras"
+      "uso": "fundos premium de textura, luz, fumaca, marmore, chuva e sombras"
     }
   },
   "prompts_medicas": [

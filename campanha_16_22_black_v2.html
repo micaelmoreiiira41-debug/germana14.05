@@ -11,7 +11,7 @@
     :root {
       --black: #0A0804;
       --cream: #F0E8D8;
-      --gold: #B0906D;
+      --gold: #DCAE83;
       --verified: #D8B879;
     }
 
@@ -38,7 +38,7 @@
       width: min(360px, calc(100vw - 40px));
       overflow: hidden;
       background: var(--black);
-      border: 1px solid rgba(176, 144, 109, 0.18);
+      border: 1px solid rgba(220, 174, 131, 0.18);
       isolation: isolate;
     }
 
@@ -68,7 +68,7 @@
     .center::before {
       background:
         linear-gradient(180deg, rgba(10, 8, 4, 0.08) 0%, rgba(10, 8, 4, 0.18) 38%, rgba(10, 8, 4, 0.94) 86%, #0A0804 100%),
-        radial-gradient(circle at 50% 24%, rgba(176, 144, 109, 0.16), transparent 30%);
+        radial-gradient(circle at 50% 24%, rgba(220, 174, 131, 0.16), transparent 30%);
     }
 
     .badge {
@@ -78,12 +78,15 @@
       left: 40px;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 5px 8px 5px 5px;
-      border: 1px solid rgba(176, 144, 109, 0.34);
+      width: 143.667px;
+      height: 37.333px;
+      gap: 7px;
+      padding: 0 10px;
+      border: 1px solid rgba(220, 174, 131, 0.38);
       border-radius: 999px;
-      background: rgba(10, 8, 4, 0.72);
-      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(9, 8, 5, 0.88), rgba(3, 3, 3, 0.76));
+      backdrop-filter: blur(18px) saturate(1.14);
+      box-shadow: inset 0 1px 0 rgba(240, 232, 216, 0.1), 0 14px 38px rgba(0, 0, 0, 0.46);
     }
 
     .center .badge {
@@ -92,12 +95,12 @@
     }
 
     .avatar {
-      width: 15px;
-      height: 15px;
+      width: 23px;
+      height: 23px;
       border-radius: 50%;
       background:
         radial-gradient(circle at 52% 36%, #F0E8D8 0 17%, transparent 18%),
-        linear-gradient(135deg, #B0906D, #25170D 70%);
+        linear-gradient(135deg, #DCAE83, #25170D 70%);
       border: 1px solid rgba(240, 232, 216, 0.24);
     }
 
@@ -111,7 +114,7 @@
       align-items: center;
       gap: 3px;
       color: var(--cream);
-      font-size: 6px;
+      font-size: 7px;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -119,10 +122,10 @@
     .verified {
       display: inline-grid;
       place-items: center;
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       color: #0A0804;
-      font-size: 4px;
+      font-size: 4.5px;
       font-weight: 700;
       border-radius: 50%;
       background: var(--verified);
@@ -131,7 +134,7 @@
     .handle {
       margin-top: 1px;
       color: rgba(240, 232, 216, 0.58);
-      font-size: 4.5px;
+      font-size: 5px;
       font-weight: 400;
     }
 
@@ -168,16 +171,16 @@
       margin: 0;
       color: var(--cream);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 29.7px;
+      font-size: 32px;
       font-weight: 600;
       line-height: 0.92;
       letter-spacing: 0;
     }
 
-    .feed h1 { font-size: 29px; }
-    .small h1 { font-size: 25px; line-height: 0.96; }
-    .tiny h1 { font-size: 22.5px; line-height: 1; }
-    .large h1 { font-size: 31px; }
+    .feed h1 { font-size: 31.5px; }
+    .small h1 { font-size: 30px; line-height: 0.94; }
+    .tiny h1 { font-size: 28.4px; line-height: 0.96; }
+    .large h1 { font-size: 33.3px; }
 
     .accent {
       color: var(--gold);
@@ -190,7 +193,7 @@
       width: 41px;
       height: 1px;
       margin-top: 15px;
-      background: rgba(176, 144, 109, 0.76);
+      background: rgba(220, 174, 131, 0.76);
     }
 
     .center .rule {
@@ -204,7 +207,7 @@
       margin-top: 13px;
       padding: 12px;
       text-align: left;
-      border: 1px solid rgba(176, 144, 109, 0.42);
+      border: 1px solid rgba(220, 174, 131, 0.42);
       border-radius: 13px;
       background: rgba(10, 8, 4, 0.44);
     }
