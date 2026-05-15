@@ -47,25 +47,26 @@
       "margem_esquerda": "110px a 130px",
       "largura_maxima_texto": "760px a 820px",
       "entrelinha": "compacta, sem encostar",
-      "ajuste_tamanho": "texto principal entre 92 e 100px; usar 85px como minimo apenas em frases longas"
+      "ajuste_tamanho": "texto principal entre 100 e 120px, compactando a entrelinha quando o texto for longo",
+      "elementos_removidos": "nao usar kicker pequeno acima do texto principal e nao usar traco decorativo abaixo"
     },
     "preset_story_aprovado": {
       "margem_esquerda": 122,
       "largura_texto": 790,
       "titulo_cormorant_garamond": {
-        "font_size_px": 96,
+        "font_size_px": 108,
         "font_weight": 600,
-        "line_height": 0.92
+        "line_height": 0.9
       },
       "linha_secundaria": {
-        "font_size_px": 92,
-        "line_height": 0.93
+        "font_size_px": 104,
+        "line_height": 0.91
       },
       "palavra_destaque_playfair": {
         "font_family": "Playfair Display",
         "font_style": "italic",
         "font_weight": 500,
-        "font_size_px": 96,
+        "font_size_px": 108,
         "color": "#DCAE83"
       }
     },
@@ -74,24 +75,24 @@
         "nome": "editorial_left_large",
         "uso": "stories e feeds com imagem forte em um lado e espaco negativo no outro",
         "alinhamento": "left",
-        "titulo": "Cormorant Garamond 92-100px, minimo 85px quando o texto for longo",
-        "destaque": "Playfair Display Medium Italic 92-100px em #DCAE83",
-        "entrelinha": "0.90 a 0.95"
+        "titulo": "Cormorant Garamond 108-120px",
+        "destaque": "Playfair Display Medium Italic 108-120px em #DCAE83",
+        "entrelinha": "0.88 a 0.92"
       },
       {
         "nome": "stack_compact_center",
         "uso": "frases curtas e reflexivas, especialmente quando a imagem fica no topo",
         "alinhamento": "center",
-        "titulo": "Cormorant Garamond 92-98px, minimo 85px quando o texto for longo",
+        "titulo": "Cormorant Garamond 104-116px",
         "destaque": "Playfair Display Medium Italic em #DCAE83",
-        "entrelinha": "0.92 a 0.98"
+        "entrelinha": "0.90 a 0.94"
       },
       {
         "nome": "quote_editorial_split",
         "uso": "frases longas que precisam de ritmo visual sem perder sofisticacao",
         "alinhamento": "left",
-        "titulo": "Cormorant Garamond 85-94px para frases longas",
-        "destaque": "Playfair Display Medium Italic 85-94px em #DCAE83",
+        "titulo": "Cormorant Garamond 100-108px para frases longas",
+        "destaque": "Playfair Display Medium Italic 100-108px em #DCAE83",
         "apoio": "DM Sans 20-28px quando houver complemento",
         "entrelinha": "0.96 a 1.04"
       }
