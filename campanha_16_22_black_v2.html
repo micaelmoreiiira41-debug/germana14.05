@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campanha 16 a 22 - Black V2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0804;
+      --cream: #F0E8D8;
+      --gold: #B0906D;
+      --verified: #D8B879;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050403;
+      color: var(--cream);
+      font-family: "DM Sans", Arial, sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+      gap: 32px;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .art {
+      position: relative;
+      width: min(360px, calc(100vw - 40px));
+      overflow: hidden;
+      background: var(--black);
+      border: 1px solid rgba(176, 144, 109, 0.18);
+      isolation: isolate;
+    }
+
+    .feed { aspect-ratio: 4 / 5; }
+    .story { aspect-ratio: 9 / 16; }
+
+    .photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-position: center;
+      background-size: cover;
+      filter: brightness(1.2) saturate(0.98) contrast(0.96);
+      transform: scale(1.018);
+    }
+
+    .art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(10, 8, 4, 0.94) 0%, rgba(10, 8, 4, 0.78) 38%, rgba(10, 8, 4, 0.18) 72%, rgba(10, 8, 4, 0.42) 100%),
+        linear-gradient(180deg, rgba(10, 8, 4, 0.12) 0%, rgba(10, 8, 4, 0.05) 44%, rgba(10, 8, 4, 0.91) 100%);
+    }
+
+    .center::before {
+      background:
+        linear-gradient(180deg, rgba(10, 8, 4, 0.08) 0%, rgba(10, 8, 4, 0.18) 38%, rgba(10, 8, 4, 0.94) 86%, #0A0804 100%),
+        radial-gradient(circle at 50% 24%, rgba(176, 144, 109, 0.16), transparent 30%);
+    }
+
+    .badge {
+      position: absolute;
+      z-index: 3;
+      top: 27px;
+      left: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px 5px 5px;
+      border: 1px solid rgba(176, 144, 109, 0.34);
+      border-radius: 999px;
+      background: rgba(10, 8, 4, 0.72);
+      backdrop-filter: blur(14px);
+    }
+
+    .center .badge {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .avatar {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 52% 36%, #F0E8D8 0 17%, transparent 18%),
+        linear-gradient(135deg, #B0906D, #25170D 70%);
+      border: 1px solid rgba(240, 232, 216, 0.24);
+    }
+
+    .badge-copy {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .name {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--cream);
+      font-size: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .verified {
+      display: inline-grid;
+      place-items: center;
+      width: 6px;
+      height: 6px;
+      color: #0A0804;
+      font-size: 4px;
+      font-weight: 700;
+      border-radius: 50%;
+      background: var(--verified);
+    }
+
+    .handle {
+      margin-top: 1px;
+      color: rgba(240, 232, 216, 0.58);
+      font-size: 4.5px;
+      font-weight: 400;
+    }
+
+    .copy {
+      position: absolute;
+      z-index: 3;
+      left: 40px;
+      bottom: 58px;
+      width: 264px;
+      max-width: 264px;
+      text-align: left;
+    }
+
+    .feed .copy { bottom: 42px; }
+
+    .center .copy {
+      left: 32px;
+      right: 32px;
+      width: auto;
+      max-width: none;
+      text-align: center;
+    }
+
+    .kicker {
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 6.7px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 29.7px;
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .feed h1 { font-size: 29px; }
+    .small h1 { font-size: 25px; line-height: 0.96; }
+    .tiny h1 { font-size: 22.5px; line-height: 1; }
+    .large h1 { font-size: 31px; }
+
+    .accent {
+      color: var(--gold);
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .rule {
+      width: 41px;
+      height: 1px;
+      margin-top: 15px;
+      background: rgba(176, 144, 109, 0.76);
+    }
+
+    .center .rule {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .question-box {
+      width: 100%;
+      min-height: 46px;
+      margin-top: 13px;
+      padding: 12px;
+      text-align: left;
+      border: 1px solid rgba(176, 144, 109, 0.42);
+      border-radius: 13px;
+      background: rgba(10, 8, 4, 0.44);
+    }
+
+    .question-box span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold);
+      font-size: 5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .question-box p {
+      margin: 0;
+      color: rgba(240, 232, 216, 0.9);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 14px;
+      line-height: 1.05;
+    }
+
+    .cta {
+      display: inline-flex;
+      margin-top: 15px;
+      padding: 9px 16px;
+      color: var(--cream);
+      border: 1px solid rgba(240, 232, 216, 0.72);
+      border-radius: 999px;
+      font-size: 5.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .number {
+      position: absolute;
+      z-index: 3;
+      right: 28px;
+      bottom: 28px;
+      color: rgba(240, 232, 216, 0.28);
+      font-size: 7px;
+      letter-spacing: 0.14em;
+    }
+
+    body.single { background: var(--black); }
+
+    body.single .grid {
+      display: block;
+      width: var(--export-w);
+      height: var(--export-h);
+      overflow: hidden;
+      padding: 0;
+    }
+
+    body.single .art {
+      display: none;
+      width: 360px;
+      height: var(--base-h);
+      border: 0;
+      transform: scale(3);
+      transform-origin: top left;
+    }
+
+    body.single .art.active { display: block; }
+  </style>
+</head>
+<body>
+  <main class="grid" id="grid"></main>
+
+  <script>
+    const items = [
+      ["sabado_16_post","feed","sabado_16","post.png",1,"left small","carreira médica","Sábado · 16/05","Carreira médica também precisa ser <span class='accent'>sustentável.</span>"],
+      ["sabado_16_story_01","story","sabado_16","story_01.png",2,"left tiny","rotina real","Pergunta","Você sente que consegue equilibrar carreira e vida pessoal?","question","Equilíbrio, carreira e vida pessoal."],
+
+      ["domingo_17_post","feed","domingo_17","post.png",3,"left tiny","evolução médica","Domingo · 17/05","Toda evolução profissional começa quando o médico decide <span class='accent'>não ficar parado.</span>"],
+      ["domingo_17_story_01","story","domingo_17","story_01.png",4,"left small","você falando","Tempo","Toda carreira médica forte é construída ao longo do <span class='accent'>tempo.</span>"],
+      ["domingo_17_story_02","story","domingo_17","story_02.png",5,"center small","processo","Adaptação","Atualização e adaptação fazem parte desse <span class='accent'>processo.</span>"],
+      ["domingo_17_story_03","story","domingo_17","story_03.png",6,"left tiny","bastidor leve","Planejamento · estudo","Os profissionais que continuam evoluindo geralmente ampliam suas <span class='accent'>oportunidades.</span>"],
+      ["domingo_17_story_04","story","domingo_17","story_04.png",36,"left tiny","reflexão","Constância","O futuro profissional é construído nas decisões pequenas e <span class='accent'>constantes.</span>"],
+
+      ["segunda_18_post","feed","segunda_18","post.png",7,"left small","perícia médica","Segunda · 18/05","A perícia médica evoluiu.<br><br>E o perito também precisa <span class='accent'>evoluir.</span>"],
+      ["segunda_18_story_01","story","segunda_18","story_01.png",8,"left tiny","perícia médica","Novo cenário","As perícias médicas estão cada vez mais <span class='accent'>complexas</span> tecnicamente."],
+      ["segunda_18_story_02","story","segunda_18","story_02.png",9,"center tiny","análise técnica","Atenção","Principalmente nos casos envolvendo <span class='accent'>TEA</span> e terapias especializadas."],
+      ["segunda_18_story_03","story","segunda_18","story_03.png",10,"left tiny","contexto pericial","Ponto crítico","Hoje muitos peritos não foram treinados para analisar esses <span class='accent'>casos.</span>"],
+      ["segunda_18_story_04","story","segunda_18","story_04.png",11,"left tiny","bastidor técnico","Computador · documentos · estudo","Auditoria técnica será uma habilidade cada vez mais <span class='accent'>necessária.</span>"],
+      ["segunda_18_story_05","story","segunda_18","story_05.png",12,"left tiny","caixinha","Pergunta","Qual sua maior dificuldade hoje dentro da perícia médica?","question","Compartilhe sua dificuldade."],
+      ["segunda_18_story_06","story","segunda_18","story_06.png",13,"left tiny","grupo para médicos","Convite","Abri um grupo para médicos interessados nesse <span class='accent'>novo cenário</span> da perícia.","cta","Entrar no grupo"],
+
+      ["terca_19_post","feed","terca_19","post.png",14,"left tiny","próximo nível","Terça · 19/05","O conhecimento que trouxe você até aqui pode não ser o suficiente para levar você ao <span class='accent'>próximo nível.</span>"],
+      ["terca_19_story_01","story","terca_19","story_01.png",15,"left tiny","você falando","Aprendizado","Médicas e médicos que continuam evoluindo ampliam suas <span class='accent'>possibilidades profissionais.</span>"],
+      ["terca_19_story_02","story","terca_19","story_02.png",16,"left tiny","mercado médico","Preparo","O mercado exige profissionais cada vez mais preparados e <span class='accent'>adaptáveis.</span>"],
+      ["terca_19_story_03","story","terca_19","story_03.png",17,"left tiny","bastidor","Estudos · computador · rotina","Atualização profissional faz parte da construção de <span class='accent'>autoridade.</span>"],
+      ["terca_19_story_04","story","terca_19","story_04.png",18,"center small","reflexão","Virada","Evoluir profissionalmente deixou de ser <span class='accent'>escolha.</span>"],
+      ["terca_19_story_05","story","terca_19","story_05.png",19,"left tiny","interação","Caixa","Qual habilidade você sente que precisa desenvolver hoje?","question","Habilidade, carreira e próximo passo."],
+
+      ["quarta_20_post","feed","quarta_20","post.png",20,"left small","preparação médica","Quarta · 20/05","A forma como você se prepara influencia diretamente seu <span class='accent'>resultado.</span>"],
+      ["quarta_20_story_01","story","quarta_20","story_01.png",21,"left tiny","estudos","Estratégia","Conhecimento técnico sozinho nem sempre garante <span class='accent'>aprovação.</span>"],
+      ["quarta_20_story_02","story","quarta_20","story_02.png",22,"center small","método","Alerta","Muitos médicos estudam sem <span class='accent'>estratégia.</span>"],
+      ["quarta_20_story_03","story","quarta_20","story_03.png",23,"left tiny","organização","Dificuldade","Ansiedade, excesso de conteúdo e falta de método atrapalham <span class='accent'>muito.</span>"],
+      ["quarta_20_story_04","story","quarta_20","story_04.png",24,"left small","bastidor","Computador · mesa · livro","Organização e direcionamento fazem <span class='accent'>diferença.</span>"],
+      ["quarta_20_story_05","story","quarta_20","story_05.png",25,"left tiny","caixinha","Pergunta","Qual sua maior dificuldade hoje nos estudos?","question","Método, ansiedade ou excesso de conteúdo?"],
+
+      ["quinta_21_post","feed","quinta_21","post.png",26,"left tiny","evolução profissional","Quinta · 21/05","O médico que continua evoluindo amplia suas possibilidades <span class='accent'>profissionais.</span>"],
+      ["quinta_21_story_01","story","quinta_21","story_01.png",27,"left tiny","crescimento","Habilidades","Os médicos que mais crescem geralmente continuam desenvolvendo novas <span class='accent'>habilidades.</span>"],
+      ["quinta_21_story_02","story","quinta_21","story_02.png",28,"center small","atualização","Medicina atual","A medicina atual exige atualização <span class='accent'>constante.</span>"],
+      ["quinta_21_story_03","story","quinta_21","story_03.png",29,"left small","bastidor","Computador · organização · estudo","Construir carreira também exige visão <span class='accent'>estratégica.</span>"],
+      ["quinta_21_story_04","story","quinta_21","story_04.png",30,"center small","reflexão","Possibilidades","A evolução profissional amplia <span class='accent'>possibilidades.</span>"],
+
+      ["sexta_22_post","feed","sexta_22","post.png",31,"left small","carreira sustentável","Sexta · 22/05","Carreira médica também precisa ser <span class='accent'>sustentável.</span>"],
+      ["sexta_22_story_01","story","sexta_22","story_01.png",32,"center small","consciência","Carreira","Nenhuma carreira sólida é construída no <span class='accent'>automático.</span>"],
+      ["sexta_22_story_02","story","sexta_22","story_02.png",33,"left small","equilíbrio","Atualização","Atualização profissional também exige <span class='accent'>equilíbrio.</span>"],
+      ["sexta_22_story_03","story","sexta_22","story_03.png",34,"left tiny","bastidor","Planejamento · organização · rotina real","Planejamento também faz parte de uma carreira mais <span class='accent'>sustentável.</span>"],
+      ["sexta_22_story_04","story","sexta_22","story_04.png",35,"left tiny","reflexão","Crescimento","O médico que constrói com consciência tende a crescer de forma mais <span class='accent'>sustentável.</span>"]
+    ];
+
+    const grid = document.getElementById("grid");
+
+    function render(item) {
+      const [id, type, day, filename, bg, layout, handle, kicker, text, extraType, extraText] = item;
+      const art = document.createElement("article");
+      art.id = id;
+      art.className = `art ${type} ${layout}`;
+      art.dataset.day = day;
+      art.dataset.filename = filename;
+      const bgPath = `assets/campanha_16_22_v2/bg_${String(bg).padStart(2, "0")}.png`;
+      art.innerHTML = `
+        <div class="photo" style="background-image:url('${bgPath}')"></div>
+        <div class="badge">
+          <div class="avatar"></div>
+          <div class="badge-copy">
+            <div class="name">Dra.Germana Veloso <span class="verified">✓</span></div>
+            <div class="handle">${handle}</div>
+          </div>
+        </div>
+        <div class="copy">
+          <div class="kicker">${kicker}</div>
+          <h1>${text}</h1>
+          ${extraType === "question" ? `<div class="question-box"><span>responda aqui</span><p>${extraText}</p></div>` : ""}
+          ${extraType === "cta" ? `<div class="cta">${extraText}</div>` : ""}
+          <div class="rule"></div>
+        </div>
+        ${type === "story" ? `<div class="number">${filename.match(/story_(\d+)/)?.[1] || "01"}</div>` : ""}
+      `;
+      return art;
+    }
+
+    items.forEach(item => grid.appendChild(render(item)));
+
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    if (id) {
+      const item = document.getElementById(id);
+      if (item) {
+        const isFeed = item.classList.contains("feed");
+        document.body.classList.add("single");
+        document.documentElement.style.setProperty("--export-w", "1080px");
+        document.documentElement.style.setProperty("--export-h", isFeed ? "1350px" : "1920px");
+        document.documentElement.style.setProperty("--base-h", isFeed ? "450px" : "640px");
+        [...document.querySelectorAll(".art")].forEach(el => el.classList.toggle("active", el === item));
+      }
+    }
+  </script>
+</body>
+</html>
