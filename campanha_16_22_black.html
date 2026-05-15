@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campanha 16 a 22 - ID Black</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0804;
+      --gold: #C8954A;
+      --gold-light: #E8C87A;
+      --cream: #F0E8D8;
+      --muted: rgba(240, 232, 216, 0.62);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #060504;
+      color: var(--cream);
+      font-family: "DM Sans", Arial, sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+      gap: 32px;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .art {
+      position: relative;
+      width: min(360px, calc(100vw - 40px));
+      overflow: hidden;
+      background: var(--black);
+      border: 1px solid rgba(232, 200, 122, 0.14);
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.5);
+      isolation: isolate;
+    }
+
+    .feed { aspect-ratio: 4 / 5; }
+    .story { aspect-ratio: 9 / 16; }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-position: center top;
+      background-size: cover;
+      transform: scale(1.025);
+    }
+
+    .bg.sabado { background-image: url("assets/campanha_16_22/sabado_16.png"); }
+    .bg.domingo { background-image: url("assets/campanha_16_22/domingo_17.png"); }
+    .bg.terca { background-image: url("assets/campanha_16_22/terca_19.png"); }
+    .bg.quarta { background-image: url("assets/campanha_16_22/quarta_20.png"); }
+    .bg.quinta { background-image: url("assets/campanha_16_22/quinta_21.png"); }
+    .bg.sexta { background-image: url("assets/campanha_16_22/sexta_22.png"); }
+    .bg.segunda1 { background-image: url("assets/backgrounds/story_01_black.png"); }
+    .bg.segunda2 { background-image: url("assets/backgrounds/story_02_black.png"); }
+    .bg.segunda3 { background-image: url("assets/backgrounds/story_03_black.png"); }
+    .bg.segunda4 { background-image: url("assets/backgrounds/story_04_black.png"); }
+    .bg.segunda5 { background-image: url("assets/backgrounds/story_05_black.png"); }
+    .bg.segunda6 { background-image: url("assets/backgrounds/story_06_black.png"); }
+
+    .art::before,
+    .art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .art::before {
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(10, 8, 4, 0.04) 0%, rgba(10, 8, 4, 0.16) 38%, rgba(10, 8, 4, 0.96) 83%, #0A0804 100%),
+        radial-gradient(circle at 72% 18%, rgba(232, 200, 122, 0.15), transparent 26%);
+    }
+
+    .feed::before {
+      background:
+        linear-gradient(180deg, rgba(10, 8, 4, 0.08) 0%, rgba(10, 8, 4, 0.28) 42%, rgba(10, 8, 4, 0.98) 100%),
+        radial-gradient(circle at 72% 18%, rgba(232, 200, 122, 0.14), transparent 28%);
+    }
+
+    .art::after {
+      z-index: 2;
+      opacity: 0.13;
+      background-image:
+        linear-gradient(rgba(240, 232, 216, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240, 232, 216, 0.04) 1px, transparent 1px);
+      background-size: 100% 48px, 48px 100%;
+      mix-blend-mode: screen;
+    }
+
+    .badge {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      top: 5.2%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 56%;
+      max-width: 88%;
+      padding: 8px 10px 8px 9px;
+      background: rgba(10, 8, 4, 0.78);
+      border: 1px solid rgba(232, 200, 122, 0.2);
+      border-radius: 999px;
+      transform: translateX(-50%);
+      backdrop-filter: blur(12px);
+    }
+
+    .avatar {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 31px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 35%, #f0e8d8 0 18%, transparent 19%),
+        linear-gradient(135deg, #c8954a, #0a0804);
+      border: 1px solid rgba(240, 232, 216, 0.28);
+    }
+
+    .badge-text {
+      display: grid;
+      min-width: 0;
+      line-height: 1.05;
+    }
+
+    .badge-text strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      overflow: visible;
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-text span {
+      color: rgba(240, 232, 216, 0.54);
+      font-size: 8px;
+      font-weight: 300;
+      white-space: nowrap;
+    }
+
+    .verified {
+      display: inline-grid;
+      place-items: center;
+      width: 10px;
+      height: 10px;
+      color: #0A0804;
+      font-size: 7px;
+      font-weight: 700;
+      font-family: Arial, sans-serif;
+      line-height: 10px;
+      border-radius: 50%;
+      background: var(--gold-light);
+    }
+
+    .chevron {
+      margin-left: auto;
+      color: rgba(240, 232, 216, 0.68);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .content {
+      position: absolute;
+      z-index: 4;
+      left: 9%;
+      right: 9%;
+      bottom: 9.2%;
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .feed .content { bottom: 10.5%; }
+
+    .kicker {
+      margin-bottom: 15px;
+      color: rgba(232, 200, 122, 0.84);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--cream);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.01;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .feed h1 { font-size: 42px; }
+    .short h1 { font-size: 48px; }
+    .long h1 { font-size: 36px; line-height: 1.07; }
+    .mini h1 { font-size: 32px; line-height: 1.1; }
+
+    .accent {
+      color: var(--gold-light);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .oval {
+      position: relative;
+      display: inline-block;
+      padding: 0 0.08em;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .oval::after {
+      content: "";
+      position: absolute;
+      left: -0.18em;
+      right: -0.18em;
+      top: 8%;
+      bottom: 6%;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      transform: rotate(-5deg);
+      opacity: 0.9;
+    }
+
+    .question-box {
+      width: 100%;
+      min-height: 128px;
+      margin-top: 22px;
+      padding: 22px;
+      text-align: left;
+      border: 1px solid rgba(232, 200, 122, 0.38);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(240, 232, 216, 0.08), rgba(10, 8, 4, 0.3));
+      box-shadow: inset 0 1px 0 rgba(240, 232, 216, 0.08);
+    }
+
+    .question-box span {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(232, 200, 122, 0.86);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .question-box p {
+      margin: 0;
+      color: rgba(240, 232, 216, 0.88);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.08;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 37px;
+      margin-top: 24px;
+      padding: 0 22px;
+      color: var(--cream);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid rgba(240, 232, 216, 0.72);
+      border-radius: 999px;
+      background: rgba(10, 8, 4, 0.2);
+    }
+
+    .story-number {
+      position: absolute;
+      z-index: 5;
+      right: 8%;
+      bottom: 4.6%;
+      color: rgba(240, 232, 216, 0.28);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+    }
+
+    .label {
+      width: min(360px, calc(100vw - 40px));
+      margin-top: -24px;
+      color: rgba(240, 232, 216, 0.56);
+      font-size: 12px;
+    }
+
+    body.single {
+      background: var(--black);
+    }
+
+    body.single .grid {
+      display: block;
+      width: var(--export-w);
+      height: var(--export-h);
+      overflow: hidden;
+      padding: 0;
+    }
+
+    body.single .art {
+      display: none;
+      width: var(--base-w);
+      height: var(--base-h);
+      border: 0;
+      box-shadow: none;
+      transform: scale(3);
+      transform-origin: top left;
+    }
+
+    body.single .art.active { display: block; }
+    body.single .label { display: none; }
+  </style>
+</head>
+<body>
+  <main class="grid" aria-label="Campanha Dra.Germana Veloso - 16 a 22">
+    <section id="sabado_16_post" class="art feed short"><div class="bg sabado"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>carreira médica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">sábado · 16/05</div><h1>Carreira médica também precisa ser <span class="accent">sustentável</span>.</h1></div></section>
+    <div class="label">Sábado 16 - Post</div>
+    <section id="sabado_16_story_01" class="art story long"><div class="bg sabado"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>rotina real</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">pergunta</div><h1>Você sente que consegue equilibrar carreira e vida pessoal?</h1><div class="question-box"><span>responda aqui</span><p>Equilíbrio, rotina e carreira.</p></div></div><div class="story-number">01</div></section>
+
+    <section id="domingo_17_post" class="art feed long"><div class="bg domingo"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>evolução médica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">domingo · 17/05</div><h1>Toda evolução profissional começa quando o médico decide <span class="accent">não ficar parado</span>.</h1></div></section>
+    <section id="domingo_17_story_01" class="art story long"><div class="bg domingo"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>você falando</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">tempo</div><h1>Toda carreira médica forte é construída ao longo do <span class="accent">tempo</span>.</h1></div><div class="story-number">01</div></section>
+    <section id="domingo_17_story_02" class="art story long"><div class="bg domingo"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>processo</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">adaptação</div><h1>Atualização e adaptação fazem parte desse <span class="oval">processo</span>.</h1></div><div class="story-number">02</div></section>
+    <section id="domingo_17_story_03" class="art story long"><div class="bg sabado"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor leve</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">planejamento · estudo</div><h1>Os profissionais que continuam evoluindo geralmente ampliam suas <span class="accent">oportunidades</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="domingo_17_story_04" class="art story long"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>reflexão</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">constância</div><h1>O futuro profissional é construído nas decisões pequenas e <span class="accent">constantes</span>.</h1></div><div class="story-number">04</div></section>
+
+    <section id="segunda_18_post" class="art feed short"><div class="bg segunda3"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>perícia médica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">segunda · 18/05</div><h1>A perícia médica evoluiu.<br><br>E o perito também precisa <span class="accent">evoluir</span>.</h1></div></section>
+    <section id="segunda_18_story_01" class="art story long"><div class="bg segunda1"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>perícia médica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">novo cenário</div><h1>As perícias médicas estão cada vez mais <span class="accent">complexas</span> tecnicamente.</h1></div><div class="story-number">01</div></section>
+    <section id="segunda_18_story_02" class="art story long"><div class="bg segunda2"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>análise técnica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">atenção</div><h1>Principalmente nos casos envolvendo <span class="oval">TEA</span> e terapias especializadas.</h1></div><div class="story-number">02</div></section>
+    <section id="segunda_18_story_03" class="art story long"><div class="bg segunda3"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>contexto pericial</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">ponto crítico</div><h1>Hoje muitos peritos não foram treinados para analisar esses <span class="accent">casos</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="segunda_18_story_04" class="art story long"><div class="bg segunda4"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor técnico</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">computador · documentos · estudo</div><h1>Auditoria técnica será uma habilidade cada vez mais <span class="oval">necessária</span>.</h1></div><div class="story-number">04</div></section>
+    <section id="segunda_18_story_05" class="art story long"><div class="bg segunda5"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>caixinha</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">pergunta</div><h1>Qual sua maior dificuldade hoje dentro da perícia médica?</h1><div class="question-box"><span>responda aqui</span><p>Compartilhe sua dificuldade.</p></div></div><div class="story-number">05</div></section>
+    <section id="segunda_18_story_06" class="art story long"><div class="bg segunda6"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>grupo para médicos</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">convite</div><h1>Abri um grupo para médicos interessados nesse <span class="accent">novo cenário</span> da perícia.</h1><div class="cta">entrar no grupo</div></div><div class="story-number">06</div></section>
+
+    <section id="terca_19_post" class="art feed long"><div class="bg terca"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>próximo nível</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">terça · 19/05</div><h1>O conhecimento que trouxe você até aqui pode não ser o suficiente para levar você ao <span class="accent">próximo nível</span>.</h1></div></section>
+    <section id="terca_19_story_01" class="art story mini"><div class="bg terca"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>você falando</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">aprendizado</div><h1>Os médicos que mais crescem hoje têm uma característica em comum: continuam <span class="accent">aprendendo</span>.</h1></div><div class="story-number">01</div></section>
+    <section id="terca_19_story_02" class="art story long"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>mercado médico</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">preparo</div><h1>O mercado exige profissionais cada vez mais preparados e <span class="accent">adaptáveis</span>.</h1></div><div class="story-number">02</div></section>
+    <section id="terca_19_story_03" class="art story long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">estudos · computador · rotina</div><h1>Atualização profissional faz parte da construção de <span class="accent">autoridade</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="terca_19_story_04" class="art story short"><div class="bg terca"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>reflexão</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">virada</div><h1>Evoluir profissionalmente deixou de ser <span class="oval">escolha</span>.</h1></div><div class="story-number">04</div></section>
+    <section id="terca_19_story_05" class="art story long"><div class="bg sabado"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>interação</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">caixa</div><h1>Qual habilidade você sente que precisa desenvolver hoje?</h1><div class="question-box"><span>responda aqui</span><p>Habilidade, carreira e próximo passo.</p></div></div><div class="story-number">05</div></section>
+
+    <section id="quarta_20_post" class="art feed long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>preparação médica</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">quarta · 20/05</div><h1>A forma como você se prepara influencia diretamente seu <span class="accent">resultado</span>.</h1></div></section>
+    <section id="quarta_20_story_01" class="art story long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>estudos</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">estratégia</div><h1>Conhecimento técnico sozinho nem sempre garante <span class="accent">aprovação</span>.</h1></div><div class="story-number">01</div></section>
+    <section id="quarta_20_story_02" class="art story short"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>método</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">alerta</div><h1>Muitos médicos estudam sem <span class="oval">estratégia</span>.</h1></div><div class="story-number">02</div></section>
+    <section id="quarta_20_story_03" class="art story long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>organização</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">dificuldade</div><h1>Ansiedade, excesso de conteúdo e falta de método atrapalham <span class="accent">muito</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="quarta_20_story_04" class="art story long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">computador · mesa · livro</div><h1>Organização e direcionamento fazem <span class="accent">diferença</span>.</h1></div><div class="story-number">04</div></section>
+    <section id="quarta_20_story_05" class="art story long"><div class="bg quarta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>caixinha</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">pergunta</div><h1>Qual sua maior dificuldade hoje nos estudos?</h1><div class="question-box"><span>responda aqui</span><p>Método, ansiedade ou excesso de conteúdo?</p></div></div><div class="story-number">05</div></section>
+
+    <section id="quinta_21_post" class="art feed long"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>evolução profissional</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">quinta · 21/05</div><h1>O médico que continua evoluindo amplia suas possibilidades <span class="accent">profissionais</span>.</h1></div></section>
+    <section id="quinta_21_story_01" class="art story long"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>crescimento</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">habilidades</div><h1>Os médicos que mais crescem geralmente continuam desenvolvendo novas <span class="accent">habilidades</span>.</h1></div><div class="story-number">01</div></section>
+    <section id="quinta_21_story_02" class="art story short"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>atualização</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">medicina atual</div><h1>A medicina atual exige atualização <span class="oval">constante</span>.</h1></div><div class="story-number">02</div></section>
+    <section id="quinta_21_story_03" class="art story long"><div class="bg sabado"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">computador · organização · estudo</div><h1>Construir carreira também exige visão <span class="accent">estratégica</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="quinta_21_story_04" class="art story short"><div class="bg quinta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>reflexão</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">possibilidades</div><h1>A evolução profissional amplia <span class="accent">possibilidades</span>.</h1></div><div class="story-number">04</div></section>
+
+    <section id="sexta_22_post" class="art feed short"><div class="bg sexta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>carreira sustentável</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">sexta · 22/05</div><h1>Carreira médica também precisa ser <span class="accent">sustentável</span>.</h1></div></section>
+    <section id="sexta_22_story_01" class="art story short"><div class="bg sexta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>consciência</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">carreira</div><h1>Nenhuma carreira sólida é construída no <span class="oval">automático</span>.</h1></div><div class="story-number">01</div></section>
+    <section id="sexta_22_story_02" class="art story long"><div class="bg sexta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>equilíbrio</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">atualização</div><h1>Atualização profissional também exige <span class="accent">equilíbrio</span>.</h1></div><div class="story-number">02</div></section>
+    <section id="sexta_22_story_03" class="art story long"><div class="bg sexta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>bastidor</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">planejamento · organização · rotina real</div><h1>Planejamento também faz parte de uma carreira mais <span class="accent">sustentável</span>.</h1></div><div class="story-number">03</div></section>
+    <section id="sexta_22_story_04" class="art story long"><div class="bg sexta"></div><div class="badge"><div class="avatar"></div><div class="badge-text"><strong>Dra.Germana Veloso <span class="verified">✓</span></strong><span>reflexão</span></div><div class="chevron">›</div></div><div class="content"><div class="kicker">crescimento</div><h1>O médico que constrói com consciência tende a crescer de forma mais <span class="accent">sustentável</span>.</h1></div><div class="story-number">04</div></section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    if (id) {
+      const item = document.getElementById(id);
+      if (item) {
+        const isFeed = item.classList.contains("feed");
+        document.body.classList.add("single");
+        document.documentElement.style.setProperty("--export-w", isFeed ? "1080px" : "1080px");
+        document.documentElement.style.setProperty("--export-h", isFeed ? "1350px" : "1920px");
+        document.documentElement.style.setProperty("--base-w", "360px");
+        document.documentElement.style.setProperty("--base-h", isFeed ? "450px" : "640px");
+        item.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+{
+  "projeto": "MedCarreira",
+  "versao": "1.0",
+  "descricao": "Identidade visual completa extraída das imagens de referência para uso em posts do Instagram",
+  "baseado_em": "5 imagens de referência analisadas — estilo dark luxury editorial médico",
+
+  "paleta_de_cores": {
+    "fundos": {
+      "preto_profundo": {
+        "hex": "#0A0804",
+        "uso": "Fundo principal, base inferior de todos os posts"
+      },
+      "marrom_escuro_quente": {
+        "hex": "#1A1008",
+        "uso": "Tom de ambiente, sombras nos cenários"
+      },
+      "carvao_acinzentado": {
+        "hex": "#1C1C1C",
+        "uso": "Fundos neutros, variação de cenário"
+      }
+    },
+    "acentos_e_destaques": {
+      "dourado_ambar_principal": {
+        "hex": "#C8954A",
+        "uso": "Cor de acento principal, palavras-chave, ornamentos tipográficos"
+      },
+      "creme_claro": {
+        "hex": "#F0E8D8",
+        "uso": "Texto principal — branco quente, nunca branco puro"
+      },
+      "dourado_claro": {
+        "hex": "#E8C87A",
+        "uso": "Variação mais clara do acento dourado"
+      }
+    },
+    "luz_ambiente_nas_fotos": {
+      "ambar_quente": {
+        "hex": "#D4822A",
+        "uso": "Iluminação de mesa, abajur"
+      },
+      "dourado_por_do_sol": {
+        "hex": "#C8864A",
+        "uso": "Luz de janela, golden hour"
+      },
+      "bege_iluminado": {
+        "hex": "#8C6840",
+        "uso": "Reflexo em superfícies de madeira e couro"
+      }
+    },
+    "regra_geral": "O design opera em escuro total na base com luz quente e orgânica vinda da foto. Nunca fundo claro. Nunca azul ou ciano. A paleta é inteiramente terra, dourado e preto."
+  },
+
+  "tipografia": {
+    "fonte_principal": {
+      "nome": "Cormorant Garamond",
+      "google_fonts_url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+      "uso": "Todos os títulos e frases de impacto",
+      "variacoes": {
+        "semibold": {
+          "peso": 600,
+          "estilo": "normal",
+          "uso": "Frases principais, texto branco creme"
+        },
+        "italic": {
+          "peso": 400,
+          "estilo": "italic",
+          "uso": "Palavras de destaque dentro da frase (ex: constante, evoluindo, adaptação)"
+        },
+        "regular": {
+          "peso": 400,
+          "estilo": "normal",
+          "uso": "Subtítulos e frases menores"
+        }
+      },
+      "caracteristicas_de_uso": {
+        "tamanho": "Muito grande — ocupa boa parte da tela",
+        "alinhamento": "Centralizado",
+        "line_height": "1.1 a 1.2",
+        "letter_spacing": "normal a levemente negativo",
+        "caixa_alta": false,
+        "max_linhas": "3 a 4 linhas por post"
+      }
+    },
+    "palavras_de_destaque": {
+      "descricao": "Palavras-chave recebem tratamento especial em duas variações alternadas — nunca ambas ao mesmo tempo",
+      "variacao_1": {
+        "estilo": "Cor dourada âmbar em Cormorant Italic",
+        "cor": "#C8954A"
+      },
+      "variacao_2": {
+        "estilo": "Elipse ou oval desenhada ao redor da palavra",
+        "detalhe": "Stroke fino dourado, estilo manuscrito/caligráfico, levemente inclinada"
+      }
+    },
+    "fonte_secundaria_opcao_1": {
+      "nome": "DM Sans",
+      "google_fonts_url": "https://fonts.google.com/specimen/DM+Sans",
+      "uso": "Legendas, CTAs, handles, descrições curtas",
+      "pesos": [300, 400],
+      "estilo_geral": "Limpa, geométrica, neutra — combina bem com o serif elegante do título"
+    },
+    "fonte_secundaria_opcao_2": {
+      "nome": "Jost",
+      "google_fonts_url": "https://fonts.google.com/specimen/Jost",
+      "uso": "Alternativa à DM Sans — CTAs com letra espaçada",
+      "pesos": [300, 500],
+      "letter_spacing_cta": "0.1em",
+      "estilo_geral": "Levemente mais humanista, igualmente limpa"
+    },
+    "regra_de_uso": "Cormorant para tudo que é impacto: títulos, palavras-chave, citações. DM Sans ou Jost para tudo que é leitura: corpo de texto, bullets, numeração, CTAs. Nunca misture as duas fontes alternativas no mesmo post."
+  },
+
+  "elementos_visuais": {
+    "gradiente_base": {
+      "descricao": "Presente em todos os posts — cria a cama escura para o texto aparecer sobre a foto",
+      "tipo": "linear-gradient vertical",
+      "direcao": "de cima para baixo",
+      "inicio": "transparent",
+      "fim": "#0A0804",
+      "inicio_em": "50% da altura do post",
+      "fim_em": "100%",
+      "opacidade": "85% a 100%"
+    },
+    "ornamentos_tipograficos": {
+      "elipse_oval": {
+        "descricao": "Oval ou elipse desenhada ao redor de palavra-chave",
+        "espessura_stroke": "1.5px a 2px",
+        "cor": "#C8954A ou #F0E8D8",
+        "inclinacao": "levemente inclinada (não perfeitamente horizontal)",
+        "estilo": "manuscrito, caligráfico",
+        "frequencia": "apenas uma palavra por post"
+      },
+      "underline_manual": {
+        "descricao": "Linha horizontal fina sob palavra-chave",
+        "estilo": "traço manual, não CSS padrão",
+        "cor": "#C8954A"
+      }
+    },
+    "badge_perfil": {
+      "posicao": "topo centralizado",
+      "formato": "pílula/badge arredondado",
+      "fundo": "preto sólido com leve opacidade",
+      "foto": "circular com borda sutil de gradiente estilo Instagram",
+      "texto_nome": "sans-serif branca, peso 500",
+      "texto_handle": "sans-serif cinza claro",
+      "elemento_extra": "chevron / seta à direita"
+    },
+    "cta_botao": {
+      "formato": "oval / pílula",
+      "estilo": "outline apenas — sem preenchimento",
+      "borda": "fina, cor branca ou dourada",
+      "texto": "sans-serif, caixa alta, letter-spacing: 0.15em",
+      "icone": "chat bubble à esquerda do texto",
+      "posicao": "abaixo do texto principal"
+    }
+  },
+
+  "composicao_e_layout": {
+    "formato": "Stories Instagram — 1080x1920px — proporção 9:16",
+    "estrutura_em_zonas": {
+      "zona_1_topo": {
+        "conteudo": "Badge do perfil",
+        "posicao": "centralizado horizontalmente, ~5% do topo"
+      },
+      "zona_2_foto": {
+        "conteudo": "Foto ou cenário de fundo",
+        "altura": "55% a 70% da altura total"
+      },
+      "zona_3_gradiente": {
+        "conteudo": "Transição transparente → preto",
+        "posicao": "começa em ~50% da altura"
+      },
+      "zona_4_texto": {
+        "conteudo": "Headline em Cormorant grande, centralizado",
+        "posicao": "parte inferior, sobre o gradiente"
+      },
+      "zona_5_cta": {
+        "conteudo": "Botão CTA (opcional)",
+        "posicao": "abaixo do texto, antes da margem inferior"
+      }
+    },
+    "alinhamento": "sempre centralizado horizontalmente",
+    "justificacao_texto": "nunca justificado — quebras de linha naturais",
+    "padding_horizontal": "8% a 10% da largura",
+    "hierarquia_visual": "foto → frase inteira → palavra de acento → CTA"
+  },
+
+  "tom_e_atmosfera": {
+    "estilo": "Dark luxury editorial médico",
+    "descricao_estilo": "Não é fintech, não é clínico, não é hospitalar. É consultório premium de alta gestão, como uma revista de negócios para médicos de alto nível.",
+    "referencias_equivalentes": [
+      "Forbes Brasil estética escura",
+      "Harvard Business Review visual premium",
+      "Ermenegildo Zegna — moda masculina premium",
+      "Brunello Cucinelli — luxo silencioso"
+    ],
+    "sensacao_transmitida": [
+      "Sofisticação calma",
+      "Autoridade intelectual",
+      "Aspiração profissional",
+      "Movimento estratégico — não urgência, não ansiedade"
+    ],
+    "publico_percebido": "Médico(a) brasileiro(a), 30–45 anos, formado há alguns anos, sentindo o teto da carreira clínica, buscando reposicionamento com dignidade e status"
+  },
+
+  "regras_de_consistencia": {
+    "sempre_presente": [
+      "Fundo escuro no terço inferior com gradiente preto quente",
+      "Cormorant Garamond como fonte de título",
+      "Uma palavra ou expressão com destaque especial — cor dourada OU elipse (nunca ambos)",
+      "Iluminação quente e cinematográfica na foto ou cenário",
+      "Texto centralizado, tamanho grande, máximo 3–4 linhas",
+      "Badge de perfil no topo centralizado"
+    ],
+    "nunca_presente": [
+      "Fundo branco ou claro",
+      "Cores frias — azul, ciano, verde, roxo",
+      "Muitos elementos decorativos simultâneos",
+      "Texto pequeno ou denso",
+      "Bordas coloridas ou molduras decorativas",
+      "Fontes sans-serif no título principal",
+      "Emoji ou ícones planos de aplicativo",
+      "Texto justificado",
+      "Branco puro (#FFFFFF) — sempre usar branco quente (#F0E8D8)"
+    ]
+  },
+
+  "prompt_extracao_id_visual": {
+    "descricao": "Cole este prompt em qualquer IA de visão (ChatGPT-4o, Claude, Gemini) junto com imagem de referência",
+    "prompt": "Analise esta imagem e extraia a identidade visual completa. Retorne um documento estruturado com:\n\n1. PALETA DE CORES\n   - Cor de fundo principal (hex)\n   - Cores de destaque/acento (hex)\n   - Cores de texto (hex por hierarquia)\n   - Gradientes identificados (direção, cores, opacidade)\n\n2. TIPOGRAFIA\n   - Nome da fonte principal (títulos)\n   - Nome da fonte secundária (corpo/subtítulos)\n   - Pesos utilizados (light, regular, bold)\n   - Tamanhos aproximados por hierarquia\n   - Espaçamento entre letras (tight / normal / loose)\n\n3. ELEMENTOS VISUAIS\n   - Formas geométricas presentes\n   - Uso de linhas, bordas, divisores\n   - Transparências e sobreposições\n   - Texturas ou ruídos (grain)\n   - Uso de ícones (estilo: outline / filled / custom)\n\n4. COMPOSIÇÃO E LAYOUT\n   - Alinhamento predominante (esquerda / centro / direita)\n   - Proporção de espaço negativo\n   - Posicionamento de texto vs imagem\n   - Estilo de hierarquia visual (como a atenção é guiada)\n\n5. TOM E ATMOSFERA\n   - Estilo geral (ex: dark fintech, editorial, minimalista, premium)\n   - Sensação transmitida (ex: sofisticado, urgente, inspirador)\n   - Público percebido\n\n6. REGRAS DE CONSISTÊNCIA\n   - O que SEMPRE aparece neste design\n   - O que NUNCA aparece neste design\n   - Como replicar este estilo em novos posts\n\nResponda em português, de forma técnica e detalhada. Use a estrutura numerada acima."
+  },
+
+  "prompt_base_geracao_fundos": {
+    "descricao": "Estrutura fixa que deve ser colada antes de cada tema nos prompts abaixo",
+    "prefixo": "Photorealistic background image, 1080x1920px vertical, dark luxury editorial style. Cinematic warm lighting, amber and gold tones, deep blacks. No people. No text. No logos. Shot on Sony A7IV, 85mm f/1.4, shallow depth of field. Warm bokeh in background. Premium medical professional aesthetic. Scene:",
+    "sufixo": "vertical composition, 9:16 aspect ratio, no humans, no text, no watermark, no UI elements, photorealistic, cinematic.",
+    "ferramentas_compativeis": {
+      "midjourney": "Cole no /imagine com --ar 9:16 --style raw --q 2",
+      "leonardo_ai": "Use o preset PhotoReal ou Cinematic",
+      "freepik_ai": "Selecione Realistic + Cinematic",
+      "adobe_firefly": "Use em Text to Image, proporção 9:16"
+    }
+  },
+
+  "prompts_60_fundos": [
+    {
+      "id": 1,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Mesa executiva clássica com estetoscópio",
+      "prompt": "Dark walnut executive desk, open black leather notebook with gold pen, chrome stethoscope coiled nearby, MacBook Pro open with dark screen reflecting warm lamp light, black ceramic coffee mug, architectural books stacked. Warm desk lamp casting golden glow. Moody shadows."
+    },
+    {
+      "id": 2,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Flat lay minimalista com iPad e estetoscópio",
+      "prompt": "Minimalist dark desk, iPad Pro in black case propped open, black stethoscope draped over corner, medical diploma in dark frame on wall behind, single white orchid in matte black vase. Top-down flat lay composition."
+    },
+    {
+      "id": 3,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Close-up estetoscópio premium com MacBook",
+      "prompt": "Close-up of premium stethoscope on dark leather surface, MacBook Pro partially visible in background with blurred screen glow, gold fountain pen beside monogrammed black notebook. Extreme shallow depth of field."
+    },
+    {
+      "id": 4,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Mesa ao entardecer com iPhone e livros",
+      "prompt": "Dark mahogany desk at dusk, iPhone 15 Pro face-down beside a stethoscope, stack of three medical textbooks with gold lettering spines, black coffee in espresso cup, warm window light from left side."
+    },
+    {
+      "id": 5,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Setup executivo com Apple Studio Display",
+      "prompt": "Executive office desk setup: Apple Studio Display glowing softly, stethoscope laid across keyboard of MacBook Pro, stack of medical protocols printed and bound in dark cover. Dramatic side lighting."
+    },
+    {
+      "id": 6,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Jaleco dobrado com estetoscópio e agenda",
+      "prompt": "Dark desk with a physician's white coat folded neatly, stethoscope placed on top, gold pen resting on open black planner, MacBook Air to the side. Intimate warm lamp glow from right."
+    },
+    {
+      "id": 7,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Mesa de couro premium — composição minimalista",
+      "prompt": "Premium leather-topped dark desk, crystal paperweight, chrome stethoscope, Mont Blanc style pen, closed MacBook Pro. Low key dramatic lighting from architectural desk lamp."
+    },
+    {
+      "id": 8,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Probe de ultrassom com MacBook e atlas",
+      "prompt": "Medical office desk: black ultrasound probe beside MacBook Pro, anatomy atlas open, AirPods Pro in case, dark ceramic mug, amber lamp light. Moody and sophisticated."
+    },
+    {
+      "id": 9,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Vista de cima — simetria perfeita dourada",
+      "prompt": "Top-down view of dark desk: stethoscope forming elegant curve, iPhone Pro, black Moleskine open to blank page, gold pen, single espresso. Perfect symmetry. Warm golden hour tone."
+    },
+    {
+      "id": 10,
+      "categoria": "Mesa / Escritório",
+      "titulo": "Canto de mesa com AirPods Max e iPad",
+      "prompt": "Corner of dark executive desk, stack of medical journals with spines visible, AirPods Max in midnight color beside iPad Pro showing blurred medical chart, warm side lamp."
+    },
+    {
+      "id": 11,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Interior de consultório com estantes iluminadas",
+      "prompt": "Elegant dark medical office interior, floor-to-ceiling bookshelves with medical books and dim LED strips, dark wood desk in foreground, no person. Architectural photography style."
+    },
+    {
+      "id": 12,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Consultório à noite com skyline de cidade",
+      "prompt": "Luxury physician office at night, city skyline visible through large window, warm interior lights, dark leather chair behind executive desk, stethoscope on desk. Cinematic depth."
+    },
+    {
+      "id": 13,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Corredor premium com diplomas emoldurados",
+      "prompt": "Premium medical office hallway, dark walls with recessed lighting, framed diplomas and certificates with subtle gold frames, dark hardwood floor. Architectural editorial style."
+    },
+    {
+      "id": 14,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Recepção de clínica luxuosa com mármore",
+      "prompt": "Medical office reception with dark marble surfaces, warm accent lighting, fresh white flowers in tall vase, blurred in background. Luxury hotel aesthetic meets healthcare."
+    },
+    {
+      "id": 15,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Home office dark academia médico",
+      "prompt": "Home office of a physician: dark library wall with medical and business books, warm Edison-style lamp, dark green velvet chair partially visible, stethoscope hanging on bookshelf. Cozy dark academia."
+    },
+    {
+      "id": 16,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Boardroom hospitalar executivo à noite",
+      "prompt": "Hospital executive boardroom after hours: dark oval table, empty leather chairs, city skyline through floor-to-ceiling glass, warm ambient ceiling light. Corporate medical power."
+    },
+    {
+      "id": 17,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Escritório com busto de Hipócrates e MacBook",
+      "prompt": "Physician's private office: dark paneled walls, built-in shelves lit with warm LED strips, Hippocrates bust on shelf, MacBook Pro open on desk in foreground, blurred background."
+    },
+    {
+      "id": 18,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Sala de espera de clínica premium",
+      "prompt": "Premium clinic waiting area, dark upholstered chairs, soft recessed lighting, large abstract dark art on wall, marble side table with single orchid. Upscale luxury medical."
+    },
+    {
+      "id": 19,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Detalhe de estante de livros médicos clássicos",
+      "prompt": "Medical office bookshelf detail: Harrison's Principles of Internal Medicine, Gray's Anatomy, other classics, warm backlighting, dark wood shelf, slight blur. Dark academia editorial."
+    },
+    {
+      "id": 20,
+      "categoria": "Escritório / Consultório Ambiente",
+      "titulo": "Escritório de canto com luz dourada pelas persianas",
+      "prompt": "Corner office interior at golden hour, sunlight streaming through blinds creating warm stripes on dark wall, executive desk in shadow with lamp creating contrast. Noir editorial."
+    },
+    {
+      "id": 21,
+      "categoria": "Cidade / Skyline / Janela",
+      "titulo": "Vista de janela executiva ao pôr do sol",
+      "prompt": "View from inside a high-floor executive office, large window showing urban skyline at sunset, golden hour light flooding dark interior room, dark desk silhouette in foreground."
+    },
+    {
+      "id": 22,
+      "categoria": "Cidade / Skyline / Janela",
+      "titulo": "Vidro com chuva e skyline noturno",
+      "prompt": "City skyline at dusk seen through rain-streaked floor-to-ceiling glass, reflections of warm interior light on the glass, dark modern office furniture in foreground. Cinematic mood."
+    },
+    {
+      "id": 23,
+      "categoria": "Cidade / Skyline / Janela",
+      "titulo": "Vista aérea noturna com estetoscópio no peitoril",
+      "prompt": "Aerial city view at night, lights of metropolitan area, seen from executive high-rise office window, physician's stethoscope resting on the windowsill in focus, blurred city below."
+    },
+    {
+      "id": 24,
+      "categoria": "Cidade / Skyline / Janela",
+      "titulo": "Escritório com janela full-width e laptop",
+      "prompt": "Dark executive office with full-width window overlooking financial district at golden hour, laptop open on desk in foreground, stethoscope beside it, warm interior ambient light."
+    },
+    {
+      "id": 25,
+      "categoria": "Cidade / Skyline / Janela",
+      "titulo": "Janela hospitalar com pôr do sol urbano",
+      "prompt": "Hospital high floor window view, sunset over city, dark window frame, interior soft lighting reflected on glass, minimalist dark desk corner visible. Aspirational medical career."
+    },
+    {
+      "id": 26,
+      "categoria": "Apple + Medicina",
+      "titulo": "MacBook com dashboard médico e estetoscópio",
+      "prompt": "MacBook Pro open on dark desk, screen showing blurred medical dashboard data with dark theme, stethoscope resting on keyboard, warm ambient light. Ultra-premium tech meets medicine."
+    },
+    {
+      "id": 27,
+      "categoria": "Apple + Medicina",
+      "titulo": "iPad Pro com Apple Pencil e imagem médica",
+      "prompt": "iPad Pro with Apple Pencil on dark leather desk surface, medical imaging visible on blurred screen, stethoscope coiled beside it, AirPods Pro case nearby. Modern physician workflow."
+    },
+    {
+      "id": 28,
+      "categoria": "Apple + Medicina",
+      "titulo": "iPhone 15 Pro com estetoscópio em foco",
+      "prompt": "iPhone 15 Pro Max on dark desk, medical app interface barely visible, chrome stethoscope in foreground in sharp focus, warm bokeh background. Shallow depth of field."
+    },
+    {
+      "id": 29,
+      "categoria": "Apple + Medicina",
+      "titulo": "Apple Watch e estetoscópio — composição minimalista",
+      "prompt": "Apple Watch on dark leather band beside stethoscope on dark desk surface, both in sharp focus, warm lamp creating long shadows. Minimal composition."
+    },
+    {
+      "id": 30,
+      "categoria": "Apple + Medicina",
+      "titulo": "MacBook e iPad em camadas com estetoscópio",
+      "prompt": "MacBook Pro and iPad Pro stacked open at angles on executive dark desk, medical reference app visible on iPad, stethoscope draped between them, coffee mug blurred behind. Layered depth."
+    },
+    {
+      "id": 31,
+      "categoria": "Apple + Medicina",
+      "titulo": "AirPods Max midnight com livro médico",
+      "prompt": "AirPods Max in space black/midnight color on dark desk beside medical textbook, warm side lighting, iPhone Pro face down beside it. Premium audio meets medical study."
+    },
+    {
+      "id": 32,
+      "categoria": "Apple + Medicina",
+      "titulo": "Apple Studio Display com software de imagem médica",
+      "prompt": "Apple Studio Display on dark modern desk showing blurred medical imaging software, dark leather desk mat, stethoscope hanging on monitor stand, ambient warm light."
+    },
+    {
+      "id": 33,
+      "categoria": "Apple + Medicina",
+      "titulo": "POV médico fotografando anotações com iPhone",
+      "prompt": "iPhone Pro held above dark desk capturing notes, below it visible: stethoscope, black notebook, medical card. First-person POV. Cinematic warm tones."
+    },
+    {
+      "id": 34,
+      "categoria": "Apple + Medicina",
+      "titulo": "MacBook Air em mesa de conferência com estetoscópio",
+      "prompt": "MacBook Air on dark conference table, open to medical document, AirPods case beside it, stethoscope in background slightly blurred, minimal clean composition."
+    },
+    {
+      "id": 35,
+      "categoria": "Apple + Medicina",
+      "titulo": "Flat lay all black — todos os dispositivos Apple",
+      "prompt": "All black flat lay: MacBook Pro, iPhone 15 Pro, AirPods Pro case, stethoscope, black notebook, gold pen. Perfect dark grid composition on black leather surface."
+    },
+    {
+      "id": 36,
+      "categoria": "Estudo / Aprendizado",
+      "titulo": "Estudo noturno com livro médico e laptop",
+      "prompt": "Dark desk at night, open medical textbook with handwritten notes visible, laptop glowing softly in background, stethoscope beside the book, warm desk lamp. Studious physician aesthetic."
+    },
+    {
+      "id": 37,
+      "categoria": "Estudo / Aprendizado",
+      "titulo": "Anotações médicas espalhadas com laptop ao fundo",
+      "prompt": "Medical notes spread on dark desk, handwritten study cards, highlighter marks, chrome pen, MacBook Pro in background blurred. Academic dark moody style."
+    },
+    {
+      "id": 38,
+      "categoria": "Estudo / Aprendizado",
+      "titulo": "Pilha de livros médicos premium iluminada",
+      "prompt": "Stack of premium medical books: Sobotta Atlas, Cecil Essentials, DSM-5, spine labels visible, warm side lighting, dark background, slight blur at edges."
+    },
+    {
+      "id": 39,
+      "categoria": "Estudo / Aprendizado",
+      "titulo": "Close-up de escrita médica em caderno preto",
+      "prompt": "Close-up of physician's handwriting in black notebook, gold pen in hand (no face visible), medical terms partially readable, warm bokeh background with lamp glow."
+    },
+    {
+      "id": 40,
+      "categoria": "Estudo / Aprendizado",
+      "titulo": "Sessão de estudo com protocolos e AirPods",
+      "prompt": "Dark desk with medical protocols binder open, sticky notes, iPad showing blurred clinical guideline, black coffee, AirPods. Focused study night session."
+    },
+    {
+      "id": 41,
+      "categoria": "Natureza / Orgânico / Contraste",
+      "titulo": "Mesa executiva com flor branca e estetoscópio",
+      "prompt": "Dark executive desk with single branch of white cherry blossoms in matte black vase, stethoscope beside it, MacBook Pro in background. Wabi-sabi meets medical premium."
+    },
+    {
+      "id": 42,
+      "categoria": "Natureza / Orgânico / Contraste",
+      "titulo": "Superfície de mármore com eucalipto e café",
+      "prompt": "Dark marble surface, single green eucalyptus sprig, chrome stethoscope, dark ceramic espresso cup, all lit by narrow beam of warm window light. Minimal editorial."
+    },
+    {
+      "id": 43,
+      "categoria": "Natureza / Orgânico / Contraste",
+      "titulo": "Escritório com monstera e sombras dramáticas",
+      "prompt": "Dark office with large monstera plant in corner casting dramatic leaf shadows on wall under warm directional light, executive desk with stethoscope in foreground."
+    },
+    {
+      "id": 44,
+      "categoria": "Natureza / Orgânico / Contraste",
+      "titulo": "Chuva na janela — refúgio e contemplação",
+      "prompt": "Rain falling outside large office window, dark interior, single desk lamp lit, stethoscope and black notebook on desk, city blurred and wet through glass. Melancholic editorial."
+    },
+    {
+      "id": 45,
+      "categoria": "Natureza / Orgânico / Contraste",
+      "titulo": "Mesa de conferência com peônia branca",
+      "prompt": "Dark wooden conference table with single white peony in vase, medical textbook spine visible, gold pen, warm overhead light creating spotlight effect. Luxury still life."
+    },
+    {
+      "id": 46,
+      "categoria": "Especialidades Médicas",
+      "titulo": "Sala de consulta cirúrgica com modelo anatômico",
+      "prompt": "Dark surgical consultation room, anatomy model on shelf in background, executive desk in foreground with stethoscope and iPad, warm accent lighting. Surgical specialty."
+    },
+    {
+      "id": 47,
+      "categoria": "Especialidades Médicas",
+      "titulo": "Estética oftalmológica com lâmpada de fenda",
+      "prompt": "Ophthalmology aesthetic: dark background, slit lamp device blurred in background, stylish prescription glasses on dark desk, medical diploma frame, warm lamp."
+    },
+    {
+      "id": 48,
+      "categoria": "Especialidades Médicas",
+      "titulo": "Cardiologia — ECG e estetoscópio em destaque",
+      "prompt": "Cardiology: dark background, ECG printout partially visible, stethoscope in sharp focus, cardiac model blurred behind, warm directional light. Emotional and clinical."
+    },
+    {
+      "id": 49,
+      "categoria": "Especialidades Médicas",
+      "titulo": "Ortopedia com modelo de coluna iluminado",
+      "prompt": "Orthopedics: anatomical spine model on dark shelf with warm LED backlighting, executive desk in foreground, medical books, stethoscope. Premium and technical."
+    },
+    {
+      "id": 50,
+      "categoria": "Especialidades Médicas",
+      "titulo": "Psiquiatria — escritório sereno com orquídea",
+      "prompt": "Psychiatry/mental health aesthetics: dark calm office, chaise lounge partially visible, low warm light, bookshelf with psychology books, orchid on side table. Serene and sophisticated."
+    },
+    {
+      "id": 51,
+      "categoria": "Poder e Status",
+      "titulo": "Pasta executiva em hotel com iPad e estetoscópio",
+      "prompt": "Dark executive briefcase open on hotel room bed, stethoscope inside among documents and iPad Pro, city view through window in background. Physician on the move."
+    },
+    {
+      "id": 52,
+      "categoria": "Poder e Status",
+      "titulo": "Business class à noite com MacBook e slides médicos",
+      "prompt": "Business class airplane seat at night, MacBook Pro open with medical slides, stethoscope in dark leather bag in foreground, city lights through window far below."
+    },
+    {
+      "id": 53,
+      "categoria": "Poder e Status",
+      "titulo": "Hotel premium à noite com skyline e laptop",
+      "prompt": "Premium hotel room desk at night, city skyline view, MacBook Pro open, stethoscope and black leather notebook, gold pen, espresso cup. Successful physician traveling."
+    },
+    {
+      "id": 54,
+      "categoria": "Poder e Status",
+      "titulo": "Sala de reunião após decisão importante",
+      "prompt": "Dark conference room after a meeting, one chair slightly pulled back, iPad on table, printed medical protocol, water glass, warm ceiling light. Decision-making power."
+    },
+    {
+      "id": 55,
+      "categoria": "Poder e Status",
+      "titulo": "Interior de carro premium com iPad e estetoscópio",
+      "prompt": "Dark luxury car interior (back seat), leather seats, city lights through window, iPad Pro open with dark interface, stethoscope in leather bag beside it. Urban medical executive."
+    },
+    {
+      "id": 56,
+      "categoria": "Variações Atmosféricas",
+      "titulo": "Madrugada azul — escritório com lamp única acesa",
+      "prompt": "Early morning blue hour, physician's dark home office, single warm desk lamp on against dark blue ambient light through window, stethoscope on desk, MacBook closed. Peaceful and purposeful."
+    },
+    {
+      "id": 57,
+      "categoria": "Variações Atmosféricas",
+      "titulo": "Vela acesa ao lado de estetoscópio — contemplação",
+      "prompt": "Late evening, single candle burning on dark desk beside stethoscope and closed medical book, warm dancing candlelight creating dramatic shadows. Contemplative."
+    },
+    {
+      "id": 58,
+      "categoria": "Variações Atmosféricas",
+      "titulo": "Inverno — geada na janela e café quente",
+      "prompt": "Winter mood: dark office interior, frost patterns on window, warm lamp creating refuge feeling inside, dark desk with stethoscope, black mug of coffee. Cozy power aesthetic."
+    },
+    {
+      "id": 59,
+      "categoria": "Variações Atmosféricas",
+      "titulo": "Corredor vazio de clínica premium aspiracional",
+      "prompt": "Moody dark hallway of a premium medical clinic, framed degrees on dark walls, recessed warm lighting, hardwood floors with reflection, potted plant in corner. Empty, aspirational."
+    },
+    {
+      "id": 60,
+      "categoria": "Variações Atmosféricas",
+      "titulo": "Close-up abstrato do cromado do estetoscópio",
+      "prompt": "Abstract: extreme close-up of chrome stethoscope head on dark leather, reflections of warm room light visible in the chrome surface, everything else deep black. Iconic, graphic."
+    }
+  ]
+}
